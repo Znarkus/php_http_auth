@@ -10,6 +10,7 @@ Currently a stub library with only HTTP Digest support. Will support Basic Auth 
 	$digest = new Php_Http_Auth\Digest(['username' => 'password']);
 
 	if (!$digest->login()) {
+		header('HTTP/1.1 401 Unauthorized');
 		echo 'Failed to login.';
 		exit;
 	}
